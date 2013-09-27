@@ -1,5 +1,8 @@
 require "apism/version"
 
 module Apism
-  # Your code goes here...
+
+  autoload :Application, 'apism/application'
+  autoload :Resource,    'apism/resource'
+
 end
