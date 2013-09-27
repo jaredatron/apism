@@ -3,29 +3,10 @@ require 'yaml'
 
 class Apism::Application < Sinatra::Base
 
-  def self.inherited(subclass)
-    subclass.const_set :Resource, Class.new(Apism::Resource)
-    super
-  end
+  autoload :Cli,           'apism/application/cli'
+  autoload :Configuration, 'apism/application/configuration'
 
-  # def self.initialize!
-  #   binding.pry
-  # end
-
-  def self.load_paths
-    @load_paths ||= Set[]
-  end
-
-  def self.load_path(*paths)
-    paths.each do |path|
-      path = Pathname(path.to_s)
-      path = root + path unless path.absolute?
-      load_paths.add path
-    end
-  end
-
-  set :root, ->{ Bundler.root }
-  autoload :Cli, 'apism/application/cli'
+  set :root, ->{ Apism::Pathname.new Bundler.root }
 
   def self.resource name, &block
     resource = Class.new(Apism::Resource)

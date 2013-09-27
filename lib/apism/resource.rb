@@ -1,11 +1,8 @@
 require 'active_support/core_ext/module/delegation'
 require 'active_support/core_ext/string/inflections'
-require 'active_support/descendants_tracker'
 require 'json'
 
 class Apism::Resource
-
-  extend ActiveSupport::DescendantsTracker
 
   def self.register_routes(app)
     resource = self
