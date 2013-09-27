@@ -1,17 +1,6 @@
-require 'apism'
-require 'slop'
+require 'apism/slop'
 
-
-require 'pry'
-
-class Slop
-  def help!
-    puts help
-    exit!
-  end
-end
-
-Apism::Cli = Slop.new help: true, strict: true do
+Apism::Cli::Options = Slop.new help: true, strict: true do
 
   on :v, :verbose, 'Enable verbose mode'
 
