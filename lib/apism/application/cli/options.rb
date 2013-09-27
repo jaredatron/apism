@@ -15,6 +15,8 @@ Apism::Application::Cli::Options = proc do |cli|
       command 'status' do
 
         run do
+          require 'pry'
+          binding.pry
           puts "SQL STATSU HERE FOR APP #{cli.app}"
         end
 
