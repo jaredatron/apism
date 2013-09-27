@@ -8,6 +8,15 @@ Apism::Application::Cli::Options = proc do |cli|
 
     run{ help! }
 
+    command 'console' do
+
+      run do
+        require 'pry'
+        Pry.start(cli)
+      end
+
+    end
+
     command 'sql' do
 
       run{ help! }
@@ -15,8 +24,6 @@ Apism::Application::Cli::Options = proc do |cli|
       command 'status' do
 
         run do
-          require 'pry'
-          binding.pry
           puts "SQL STATSU HERE FOR APP #{cli.app}"
         end
 
