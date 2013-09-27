@@ -1,6 +1,6 @@
 # Apism
 
-TODO: Write a gem description
+A simple framework, build on top of Sinatra, for building JSON APIs
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+apism new [APPLICATION_NAME]
 
 ## Contributing
 

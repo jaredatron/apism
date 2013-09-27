@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+ENV['BUNDLER_GEMFILE'] = File.expand_path('../Gemfile')
+require 'rubygems'
+require 'bundler/setup'
+require 'apism/cli'
+
+Apism::Cli.parse! ARGV
+

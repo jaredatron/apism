@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Apism::VERSION
   spec.authors       = ["Jared Grippe"]
   spec.email         = ["jared@deadlyicon.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{a simple json api framework}
+  spec.summary       = %q{A simple framework, build on top of Sinatra, for building JSON APIs}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,6 +18,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "sinatra", "~> 1.4"
+  spec.add_dependency "slop"
+
+
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "pry"
 end
